@@ -1,0 +1,28 @@
+
+<html>
+	<head>
+		<title>Project WTF</title>
+		<script type="text/javascript" src="js/MovingImg.js"></script>
+		<script type="text/javascript" src="js/onClickActions.js"></script>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/mainStyle.css"/>
+	</head>
+
+	<body id="body" >
+		<div id="container">
+				<!-- The different images will apear in here -->
+		</div>
+		<div id="buttons">
+			Speed:
+			<button id="plus" onClick="speedUpDown(1.25)">+</button>
+			<button id="minus" onClick="speedUpDown(0.75)">-</button><br><br>
+			Rotation speed:
+			<button id="plus" onClick="changeRotation(1.25)">+</button>
+			<button id="minus" onClick="changeRotation(0.75)">-</button><br><br>
+			<button onClick="changeRotation(-1)">Change rotation</button><br>
+		</div>
+	</body>
+</html>
+
+
+<script type="text/javascript" src="js/mainJs.js"></script>
