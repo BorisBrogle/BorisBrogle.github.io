@@ -3,8 +3,8 @@ class MovingImg {
     constructor(name, x, y, speed, imgName, height, width) {
         this.container = document.getElementById("container");
 
-        if (x <= 0 || x >= CONTAINER_HEIGHT) { x=CONTAINER_HEIGHT/2 }
-        if (y <= 0 || y >= CONTAINER_WIDTH) { y=CONTAINER_WIDTH/2 }
+        if (x <= 0 || x >= CONTAINER_WIDTH) { x=CONTAINER_WIDTH/2 }
+        if (y <= 0 || y >= CONTAINER_HEIGHT) { y=CONTAINER_HEIGHT/2 }
         this.x = x;
         this.y = y;
         this.name = name;
@@ -43,7 +43,7 @@ class MovingImg {
     }
 
     borderDetection() {
-      if (this.x >= CONTAINER_HEIGHT){
+      if (this.x >= CONTAINER_WIDTH){
         this.container.style.backgroundColor = getRandColorRGB();
         this.speedX = -this.speedX;
       }
@@ -52,7 +52,7 @@ class MovingImg {
         this.speedX = -this.speedX;
       }
 
-      if (this.y >= CONTAINER_WIDTH){
+      if (this.y >= CONTAINER_HEIGHT){
         this.container.style.backgroundColor = getRandColorRGB();
         this.speedY = -this.speedY;
       }
