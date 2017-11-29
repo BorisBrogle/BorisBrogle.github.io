@@ -1,5 +1,5 @@
-const CONTAINER_HEIGHT = 700;
-const CONTAINER_WIDTH = 1100;
+var CONTAINER_HEIGHT = 700;
+var CONTAINER_WIDTH = 1100;
 
 $('#container').css('width', CONTAINER_WIDTH);
 $('#container').css('height', CONTAINER_HEIGHT);
