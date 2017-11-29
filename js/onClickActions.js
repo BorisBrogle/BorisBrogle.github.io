@@ -17,6 +17,8 @@ function changeRotation(amount) {
   var initialY = 0;
   var varX = 0;
   var varY = 0;
+  var baseWidth = CONTAINER_WIDTH;
+  var baseHeight = CONTAINER_HEIGHT;
 
   $("#container").on("mousedown", function(event) {
     mouseUp = 1;
@@ -25,11 +27,13 @@ function changeRotation(amount) {
   });
   $("#container").on("mouseup", function(event) {
     mouseUp = 0;
-    CONTAINER_WIDTH += varX;
-    CONTAINER_HEIGHT += varY;
+    CONTAINER_WIDTH = baseWidth+varX;
+    CONTAINER_HEIGHT = baseHeight+varY;
     varX = 0;
     varY = 0;
-
+    baseWidth = CONTAINER_WIDTH;
+    baseHeight = CONTAINER_HEIGHT;
+    
     $("#container").css("width",CONTAINER_WIDTH+"px");
     $("#container").css("height",CONTAINER_HEIGHT+"px");
   });
@@ -39,7 +43,10 @@ function changeRotation(amount) {
     {
       varX = event.pageX - initialX;
       varY = event.pageY - initialY;
-      //$('#plus').html(varX);
+      CONTAINER_WIDTH = baseWidth+varX;
+      CONTAINER_HEIGHT = baseHeight+varY;
+      $("#container").css("width",(baseWidth+varX)+"px");
+      $("#container").css("height",(baseHeight+varY)+"px");
     }
   });
 }
