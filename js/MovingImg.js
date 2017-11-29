@@ -3,8 +3,8 @@ class MovingImg {
     constructor(name, x, y, speed, imgName, height, width) {
         this.container = document.getElementById("container");
 
-        if (x <= 0 || x >= this.maxX) { x=CONTAINER_HEIGHT/2 }
-        if (y <= 0 || y >= this.maxY) { y=CONTAINER_WIDTH/2 }
+        if (x <= 0 || x >= CONTAINER_HEIGHT) { x=CONTAINER_HEIGHT/2 }
+        if (y <= 0 || y >= CONTAINER_WIDTH) { y=CONTAINER_WIDTH/2 }
         this.x = x;
         this.y = y;
         this.name = name;
