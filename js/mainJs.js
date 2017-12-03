@@ -5,15 +5,20 @@ $('#container').css('width', CONTAINER_WIDTH);
 $('#container').css('height', CONTAINER_HEIGHT);
 $('#container').css('backgroundColor', getRandColorRGB());
 
-function launchImg(img)
-{
-  setInterval(function(){ img.launch(); }, 10);
-}
 
+var intervalId = [];
 function launchArray()
 {
   myImages.forEach(function(elem) {
-    setInterval(function(){ elem.launch(); }, 10); //setInterval is used to launch instructions every x (here 10) amount of time
+    intervalId.push(setInterval(function(){ elem.launch(); }, 10)); //setInterval is used to launch instructions every x (here 10) amount of time
+  });
+}
+
+//can be used to cancel the movement 
+function stopArray()
+{
+  intervalId.forEach(function(elem) {
+    clearInterval(elem);
   });
 }
 

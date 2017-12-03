@@ -10,8 +10,8 @@ function changeRotation(amount) {
   });
 }
 
-
-{
+//Below: "resize of the container" feature
+(function(){
   var mouseUp = 0;
   var initialX = 0;
   var initialY = 0;
@@ -33,7 +33,7 @@ function changeRotation(amount) {
     varY = 0;
     baseWidth = CONTAINER_WIDTH;
     baseHeight = CONTAINER_HEIGHT;
-    
+
     $("#container").css("width",CONTAINER_WIDTH+"px");
     $("#container").css("height",CONTAINER_HEIGHT+"px");
   });
@@ -49,4 +49,4 @@ function changeRotation(amount) {
       $("#container").css("height",(baseHeight+varY)+"px");
     }
   });
-}
+})();
