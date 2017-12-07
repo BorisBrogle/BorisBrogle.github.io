@@ -12,13 +12,17 @@
 				<!-- The different images will apear in here -->
 		</div>
 		<div id="buttons">
-			Speed:
-			<button id="plus" onClick="speedUpDown(1.25)">+</button>
-			<button id="minus" onClick="speedUpDown(0.75)">-</button><br><br>
-			Rotation speed:
-			<button id="plus" onClick="changeRotation(1.25)">+</button>
-			<button id="minus" onClick="changeRotation(0.75)">-</button><br><br>
-			<button onClick="changeRotation(-1)">Change rotation</button><br>
+			<span id="speedSet">Speed:
+				<button id="plus" onClick="speedUpDown(1.25)">+</button>
+				<button id="minus" onClick="speedUpDown(0.75)">-</button><br><br>
+			</span>
+			<span id="rotationSet">Rotation speed:
+				<button id="plus" onClick="changeRotation(1.25)">+</button>
+				<button id="minus" onClick="changeRotation(0.75)">-</button><br><br>
+			<span>
+			<span id="changeRotation">
+				<button onClick="changeRotation(-1)">Change rotation</button><br>
+			</span>
 		</div>
 	</body>
 </html>
