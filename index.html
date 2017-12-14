@@ -8,9 +8,9 @@
 	</head>
 
 	<body id="body" >
-		<div id="container">
-				<!-- The different images will apear in here -->
-		</div>
+		<canvas id="container" height="700" width="1100">
+				Your browser seems to be too old: please update it!
+		</canvas>
 		<div id="buttons">
 			<span id="speedSet">Speed:
 				<button id="plus" onClick="speedUpDown(1.25)">+</button>
@@ -24,9 +24,33 @@
 				<button onClick="changeRotation(-1)">Change rotation</button><br>
 			</span>
 		</div>
+		<canvas id="test" height="500" style="border:1px solid black"></canvas>
 	</body>
 </html>
 
+<script>
+window.onload = function(){
+
+var canvas = document.getElementById('container');
+		if(!canvas)
+		{
+				alert("Impossible de récupérer le canvas");
+				return;
+		}
+
+var context = canvas.getContext('2d');
+		if(!context)
+		{
+				alert("Impossible de récupérer le context du canvas");
+				return;
+		}
+
+		var img= new Image();
+		img.src = "images/hihi.png"
+		context.drawImage(img, 0, 0, img.width, img.height, 10, 10, img.width, img.height);
+		        //drawImage(image, xInImage, yInImage, widthToTake, heightToTake, x, y, width, height)
+}
+</script>
 
 <script type="text/javascript" src="js/mainJs.js"></script>
 <script type="text/javascript" src="js/onClickActions.js"></script>

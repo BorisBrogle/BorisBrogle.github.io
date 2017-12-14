@@ -2,6 +2,8 @@ class MovingImg {
     // Constructor
     constructor(name, x, y, speed, imgName, height, width) {
         this.container = document.getElementById("container");
+        this.context = container.getContext('2d');
+
         this.maxWidth = CONTAINER_WIDTH-width;
         this.maxHeight = CONTAINER_HEIGHT-height;
 
@@ -18,18 +20,25 @@ class MovingImg {
         this.width = width;
 
 
+        this.image = new Image(this.height, this.width);
+
+        this.image.src = 'images/'+imgName;
+        this.context.drawImage(this.image, 0, 0, 100, 100, this.x, this.y, this.width, this.height);
+        //drawImage(image, xInImage, yInImage, widthToTake, heightToTake, x, y, width, height)
+
+
+        /*
         this.newImg = document.createElement('img');
 
         this.newImg.src = 'images/'+imgName;
         this.newImg.width = width;
         this.newImg.height = height;
-        this.newImg.id = name;
 
         this.container.appendChild(this.newImg);
 
         document.getElementById(name).style.position = "absolute";
         document.getElementById(name).style.left = x;
-        document.getElementById(name).style.bottom = y;
+        document.getElementById(name).style.bottom = y; */
     }
 
     // Methods
@@ -63,9 +72,8 @@ class MovingImg {
 
       this.rotateInf += this.rotationFactor;
 
-      document.getElementById(this.name).style.left = this.x;
-      document.getElementById(this.name).style.bottom = this.y;
-      document.getElementById(this.name).style.transform = "rotate("+this.rotateInf*2+"deg)";
+      this.context.drawImage(this.image, 0, 0, 100, 100, this.x, this.y, this.width, this.height);
+      //document.getElementById(this.name).style.transform = "rotate("+this.rotateInf*2+"deg)";
     }
 
     borderDetection() {
@@ -83,8 +91,8 @@ class MovingImg {
 
     /* TODO */
     collisionDetection() {
-      var h = this.height;
-      var w = this.width;
+      let h = this.height;
+      let w = this.width;
       myImages.forEach(function(elem) {
 
       });

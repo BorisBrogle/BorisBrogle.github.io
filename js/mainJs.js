@@ -1,8 +1,9 @@
 var CONTAINER_HEIGHT = 700;
 var CONTAINER_WIDTH = 1100;
 
-$('#container').css('width', CONTAINER_WIDTH);
-$('#container').css('height', CONTAINER_HEIGHT);
+container = document.getElementById("container");
+container.width = CONTAINER_WIDTH;
+container.height = CONTAINER_HEIGHT;
 $('#container').css('backgroundColor', getRandColorRGB());
 
 
@@ -14,7 +15,7 @@ function launchArray()
   });
 }
 
-//can be used to cancel the movement 
+//can be used to cancel the movement
 function stopArray()
 {
   intervalId.forEach(function(elem) {

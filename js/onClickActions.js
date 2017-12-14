@@ -12,13 +12,14 @@ function changeRotation(amount) {
 
 //Below: "resize of the container" feature
 (function(){
-  var mouseUp = 0;
-  var initialX = 0;
-  var initialY = 0;
-  var varX = 0;
-  var varY = 0;
-  var baseWidth = CONTAINER_WIDTH;
-  var baseHeight = CONTAINER_HEIGHT;
+  let mouseUp = 0;
+  let initialX = 0;
+  let initialY = 0;
+  let varX = 0;
+  let varY = 0;
+  let baseWidth = CONTAINER_WIDTH;
+  let baseHeight = CONTAINER_HEIGHT;
+  let container = document.getElementById("container");
 
   $("#container").on("mousedown", function(event) {
     mouseUp = 1;
@@ -34,8 +35,9 @@ function changeRotation(amount) {
     baseWidth = CONTAINER_WIDTH;
     baseHeight = CONTAINER_HEIGHT;
 
-    $("#container").css("width",CONTAINER_WIDTH+"px");
-    $("#container").css("height",CONTAINER_HEIGHT+"px");
+
+    container.width = CONTAINER_WIDTH;
+    container.height = CONTAINER_HEIGHT;
   });
 
   $("#container").on("mousemove", function(event) {
@@ -45,8 +47,9 @@ function changeRotation(amount) {
       varY = event.pageY - initialY;
       CONTAINER_WIDTH = baseWidth+varX;
       CONTAINER_HEIGHT = baseHeight+varY;
-      $("#container").css("width",(baseWidth+varX)+"px");
-      $("#container").css("height",(baseHeight+varY)+"px");
+
+      container.width = baseWidth+varX;
+      container.height = baseHeight+varY;
     }
   });
 })();
