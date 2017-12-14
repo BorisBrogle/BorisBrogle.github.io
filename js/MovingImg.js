@@ -83,8 +83,8 @@ class MovingImg {
 
     /* TODO */
     collisionDetection() {
-      var h = this.height;
-      var w = this.width;
+      let h = this.height;
+      let w = this.width;
       myImages.forEach(function(elem) {
 
       });

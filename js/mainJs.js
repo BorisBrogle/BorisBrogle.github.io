@@ -1,12 +1,12 @@
-var CONTAINER_HEIGHT = 700;
-var CONTAINER_WIDTH = 1100;
+let CONTAINER_HEIGHT = 700;
+let CONTAINER_WIDTH = 1100;
 
 $('#container').css('width', CONTAINER_WIDTH);
 $('#container').css('height', CONTAINER_HEIGHT);
 $('#container').css('backgroundColor', getRandColorRGB());
 
 
-var intervalId = [];
+let intervalId = [];
 function launchArray()
 {
   myImages.forEach(function(elem) {
@@ -14,7 +14,7 @@ function launchArray()
   });
 }
 
-//can be used to cancel the movement 
+//can be used to cancel the movement
 function stopArray()
 {
   intervalId.forEach(function(elem) {
@@ -27,7 +27,7 @@ function getRandColorRGB()
   return "rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
 }
 
-var myImages = [];
+let myImages = [];
 
 myImages.push(new MovingImg("oeuil1", 100, 200, 1, "hihi.png", 70, 50));
 myImages.push(new MovingImg("oeuil2", 600, 400, 2, "hihi.png", 70, 50));

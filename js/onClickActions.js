@@ -12,13 +12,13 @@ function changeRotation(amount) {
 
 //Below: "resize of the container" feature
 (function(){
-  var mouseUp = 0;
-  var initialX = 0;
-  var initialY = 0;
-  var varX = 0;
-  var varY = 0;
-  var baseWidth = CONTAINER_WIDTH;
-  var baseHeight = CONTAINER_HEIGHT;
+  let mouseUp = 0;
+  let initialX = 0;
+  let initialY = 0;
+  let varX = 0;
+  let varY = 0;
+  let baseWidth = CONTAINER_WIDTH;
+  let baseHeight = CONTAINER_HEIGHT;
 
   $("#container").on("mousedown", function(event) {
     mouseUp = 1;
