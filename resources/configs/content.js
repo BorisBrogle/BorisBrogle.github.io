@@ -73,7 +73,7 @@ const content = [
         },
         "date": "2014",
         "imagePath": "projects/isn.png",
-        "link": "https://github.com/BorisBrogle/LO43-Vivarium"
+        "link": "resources/old_projects/isn/Accueil.html"
       }
     ]
   }
