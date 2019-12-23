@@ -1,32 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="Boris Brogle">
+    <meta name="viewport" content="width=device-width">  <!-- Responsive version -->
 
-<html>
-	<head>
-		<title>Project WTF</title>
-		<script type="text/javascript" src="js/MovingImg.js"></script>
-		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/mainStyle.css"/>
-	</head>
+    <title>Arthur Pardieu</title>
 
-	<body id="body" >
-		<div id="container">
-				<!-- The different images will apear in here -->
-		</div>
-		<div id="buttons">
-			<span id="speedSet">Speed:
-				<button id="plus" onClick="speedUpDown(1.25)">+</button>
-				<button id="minus" onClick="speedUpDown(0.75)">-</button><br><br>
-			</span>
-			<span id="rotationSet">Rotation speed:
-				<button id="plus" onClick="changeRotation(1.25)">+</button>
-				<button id="minus" onClick="changeRotation(0.75)">-</button><br><br>
-			<span>
-			<span id="changeRotation">
-				<button onClick="changeRotation(-1)">Change rotation</button><br>
-			</span>
-		</div>
-	</body>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Itim|Jura|Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css?v=1.0">
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script src="scripts/gameOfLife.js"></script>
+
+    <!-- Configs -->
+    <script src="resources/configs/content.js"></script>
+    <script src="resources/configs/general_configs.js"></script>
+  </head>
+
+  <body>
+    <section id="front">
+      <div id="flags">
+        <img src="resources/images/assets/french.png" onclick="updateLang('fr')" height="40px" width="40px">
+        <img src="resources/images/assets/english.png" onclick="updateLang('en')" height="40px" width="40px">
+      </div>
+
+      <div id="magicButton" onclick="reRunCellularAutomaton()">
+        <i class="fa fa-magic" style="font-size: 1.7em"></i>
+      </div>
+
+      <section id="about" class="centered-container">
+        <!-- To edit this section, go to resources/configs/general_configs.js -->
+      </section>
+
+      <section id="content" class="centered-container">
+        <!-- To edit the content, go to resources/configs/content.js -->
+      </section>
+    </section>
+
+    <section id="back">
+      <canvas id="cellularAutomatonCanvas">
+        <!-- Background canvas containing an implementation of the game of life -->
+      </canvas>
+    </section>
+  </body>
 </html>
-
-
-<script type="text/javascript" src="js/mainJs.js"></script>
-<script type="text/javascript" src="js/onClickActions.js"></script>

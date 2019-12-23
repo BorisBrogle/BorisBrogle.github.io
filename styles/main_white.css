@@ -1,0 +1,213 @@
+/* ------ General styles ------ */
+
+:root {
+  --main-color: #295187;
+  --main-color-background: #193c6b;
+  --main-color-background-hover: #0b264b;
+  /*
+  --cellular-automaton-dead-cells: #0F0F0F;
+  --cellular-automaton-alive-cells: #5E1C1E;*/
+
+
+  --cellular-automaton-dead-cells: rgba(15, 15, 15, 0.2);
+  --cellular-automaton-alive-cells: rgba(94, 28, 30, 0.26);
+
+  /*
+  --cellular-automaton-dead-cells: #0F0F0F;
+  --cellular-automaton-alive-cells: #5E1C1E;*/
+}
+
+*::selection{ background-color: #a8bae3; }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  background-color: black;
+  -ms-overflow-style: none;
+}
+
+html {
+  font-family: "Ubuntu", "Verdana";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1, h2, h3 {
+  font-size: inherit;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.fa {
+  color: black;
+}
+
+
+/* ------ Media queries ------ */
+
+@media screen and (max-width: 850px) {
+	.item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #magicButton {
+    display: none;
+  }
+}
+
+
+/* ------ Flags ------ */
+
+#flags {
+    position: fixed;
+    right: 10px;
+    top: 0;
+    z-index: 99;
+}
+
+#flags:hover {
+  cursor: pointer;
+}
+
+
+/* ------ Magic button ------ */
+
+#magicButton {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 98;
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  background-color: var(--main-color-background);
+  border-radius: 0 0 35px 0;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.9);
+}
+#magicButton:hover {
+  cursor: pointer;
+  background-color: var(--main-color-background-hover);
+  box-shadow: -1px 4px 8px 3px rgba(0, 0, 0, 0.9);
+}
+
+#magicButton>i {
+  color: white;
+}
+
+
+
+/* ------ About section ------ */
+
+#about {
+  font-size: 25px;
+}
+
+#me-image {
+  height: 200px;
+  width: 200px;
+  margin-right: 20px;
+}
+
+#self-description {
+  font-family: "Itim", "Verdana";
+  font-weight: bold;
+  color: var(--main-color);
+  margin: 0;
+}
+
+#about>.item {
+  justify-content: center;
+  margin: auto;
+}
+
+#me-title {
+  margin-bottom: 0;
+}
+
+
+/* ------ Items and general positioning ------ */
+
+.centered-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 10px;
+  clear: both;
+}
+
+.category-title {
+  font-size: 22px;
+}
+
+.item {
+  width: 100%;
+  padding: 10px;
+  clear: both;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.item-right-part {
+  padding: 10px 0 10px 0;
+}
+
+.item-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.item-date {
+  margin-left: 15px;
+  font-size: 16px;
+  font-family: "Jura";
+  color: var(--main-color);
+}
+
+.item-image>img {
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
+  margin-right: 20px;
+}
+.item-image>img:hover {
+  box-shadow: -1px 4px 7px 2px rgba(0, 0, 0, 0.9);
+  transition: box-shadow 0.25s ease-in;
+}
+
+.item-in-list {
+  font-size: 1.1em;
+}
+
+/* ------ Canvas part ------ */
+
+#about, #content {
+  background-color: rgba(250,250,250,0.8);
+  backdrop-filter: blur(2px);
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#back {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#cellularAutomatonCanvas {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
